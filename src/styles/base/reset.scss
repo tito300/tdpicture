@@ -7,8 +7,25 @@
 	HTML5 Doctor				:: https://html5doctor.com
 	and the HTML5 Boilerplate	:: https://html5boilerplate.com
 
+	-------------------------------------------------------------------------------*/
+	
+	
+	
+/* import fonts
 -------------------------------------------------------------------------------*/
-
+@font-face {
+    font-family: 'futura';
+    src: url(/fonts/futura.ttf);
+}
+@font-face {
+    font-family: 'eglantine';
+    src: url(/fonts/eglantine.ttf);
+}
+@font-face {
+    font-family: 'hand1';
+    src: url(/fonts/handwriting-1.ttf);
+}
+	
 /* Let's default this puppy out
 -------------------------------------------------------------------------------*/
 
@@ -68,7 +85,7 @@ blockquote:after,
 q:before,
 q:after {content: ''; content: none;}
 
-a {margin: 0; padding: 0; font-size: 100%; vertical-align: baseline; background: transparent;}
+a {margin: 0; padding: 0; font-size: 100%; vertical-align: baseline; background: transparent; text-decoration: none; color: rgb(40, 85, 231)}
 
 del {text-decoration: line-through;}
 

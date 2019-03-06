@@ -1,0 +1,241 @@
+#header {
+  background-color: rgb(238, 238, 238);
+  overflow: hidden;
+  height: calc(100vw/1.99543552681628);
+
+  &.img-loaded {
+    background-color: rgba(128, 128, 128, 0);
+    transition: all 0.2s;
+  }
+
+  @media all and (max-width: 2100px) {
+    height: calc(100vw/3.0441108857336036);
+  }
+  @media all and (max-width: 1400px) {
+    height: calc(100vw/3);
+  }
+  @media all and (max-width: 1200px) {
+    height: calc(100vw/1.9926778242677825);
+  }
+
+  .background-photo {
+      max-height: 100vh;
+      height: fit-content;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: -10;
+
+      ::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: fit-content;
+        background-color: white;
+        z-index: 2;
+      } 
+  }
+
+  .background-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    box-shadow: 0 0 19px -2px #b1b1b1;
+
+    &.show {
+      opacity: 1;
+      transition: all 0.4s linear;
+    }
+  }
+
+
+  // .blurred-img-wrapper {
+
+  //   &.hide {
+  //     display: none;
+  //   }
+  // }
+
+  .title-wrapper {
+    padding: 10px 0 0;
+    margin: 0 auto;
+    width: fit-content;
+    font-family: hand1;
+    letter-spacing: 6px;
+    font-size: 120px;
+    font-weight: 400;
+    color: #b55b5b;
+    text-shadow: -1px 1px 0px #b8b8b8;;
+    transform: translateX(5px);
+
+    @media all and (max-width: 1250px) {
+      font-size: 80px;
+    }
+  }
+
+  .nav-wrapper {
+    width: 65%;
+    margin: 0 auto;
+    background-color: #565656b5;
+    height: 55px;
+    display: flex;
+    align-items: center;
+    margin-top: -30px;
+    box-shadow: -1px 4px 20px -14px #1f1f1f;
+    border-radius: 2px;
+
+    &.sticky {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      // transition: width 0.2s ease-in;
+      margin-top: 0;
+    }
+    }
+
+  .nav {
+    width: fit-content;
+    padding: 10px;
+    height: fit-content;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+  }
+
+  .nav-li {
+    margin-right: 22px;
+    margin-left: 22px;
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      width: 0%;
+      border-radius: 1px;
+      height: 2px;
+      bottom: -3px;
+      left: -2px;
+      background-color: #8d8d8dc7;
+    }
+
+    &:hover::before {
+      width: 100%;
+      transition: width 0.2s ease-in;
+    }
+
+    a {
+      color: #fff5f5;
+      font-size: 16px;
+      font-weight: 600;
+      font-family: Arial, Helvetica, sans-serif;
+      letter-spacing: 2px;
+      
+    }
+  }
+
+  .animated-text__wrapper {
+    width: 800px;
+    margin: 0 auto;
+    padding: 6vw 0vw 0vw 0px;
+    text-align: start;
+    // transform: translateX(-7vw);
+        // transform: translateX(-50px);
+    @media all and (max-width: 1700px) {
+      padding: 4vw 0vw 0vw 0px;
+    }
+    @media all and (max-width: 1200px) {
+      padding: 7vw 0vw 0vw 0px;
+    }
+    // @media all and (max-width: 1000px) {
+    //   padding: 11vw 38vw 0vw 0px;
+    // }
+  }
+
+  .animated-text__text {
+    font-size: 60px;
+    font-family: futura;
+    color: #ffffff;
+    text-shadow: -1px 1px 1px #5f5f5f;
+
+    @media all and (max-width: 1700px) {
+      font-size: 50px;
+    }
+    @media all and (max-width: 1200px) {
+      font-size: 50px;
+    }
+    @media all and (max-width: 800px) {
+      font-size: 35px;
+    }
+  }
+  .animated-text__animation-wrapper {
+    display: block;
+    height: 75px;
+    margin: 0 auto;
+    width: 350px;
+    text-align: center;
+    /* margin-left: 10px; */
+    background-color: #bb5a5ab5;
+    text-shadow: 0 0 black;
+    color: #ffffff;
+    box-shadow: inset 0 0 13px -4px #272727;
+    position: relative;
+    overflow: hidden;
+    transform: translateX(5vw);
+  }
+
+  .animated-text__animation-container {
+    display: flex;
+    flex-direction: column;
+    height: 500px;
+    justify-content: space-between;
+    animation: scrol 6s infinite;
+    position: relative;
+    animation-timing-function: linear;
+
+    @keyframes scrol {
+      0% {
+        top: -500px;
+      }
+      3% {
+        top: -428px;
+      }
+      36% {
+        top: -428px;
+      }
+      39% {
+        top: -215px;
+      }
+      71% {
+        top: -215px;
+      }
+      74% {
+        top: -0px;
+      }
+      100% {
+        top: 0px;
+      }
+    }
+
+  }
+
+  .animated-text__animation {
+    font-size: 55px;
+    font-weight: 600;
+    letter-spacing: 8px;
+
+  }
+
+  .animated-text__text__const {
+    width: fit-content;
+    margin: 0 auto;
+    font-size: 45px;
+    letter-spacing: 6px;
+    color: #5b719a;
+    transform: translateX(-7vw);
+  }
+}
