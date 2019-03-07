@@ -13,7 +13,7 @@ import Img from "gatsby-image"
  * - `StaticQuery`: https://gatsby.dev/staticquery
  */
 
-const Image = ({name, style}) => (
+const Image = ({name, style, fixed}) => (
   <StaticQuery
     query={graphql`
       query {
@@ -31,9 +31,82 @@ const Image = ({name, style}) => (
             }
           }
         }
+        moments1: file(relativePath: {eq: "moments-1.jpg"}) {
+          childImageSharp {
+            fixed(width: 400) {
+              originalName
+              srcSet
+            }
+          }
+        }
+        moments2: file(relativePath: {eq: "moments-2.jpg"}) {
+          childImageSharp {
+            fixed(width: 400) {
+              originalName
+              srcSet
+            }
+          }
+        }
+        moments3: file(relativePath: {eq: "moments-3.jpg"}) {
+          childImageSharp {
+            fixed(width: 500) {
+              originalName
+              srcSet
+            }
+          }
+        }
+        details1: file(relativePath: {eq: "details-1.jpg"}) {
+          childImageSharp {
+            fixed(width: 500) {
+              originalName
+              srcSet
+            }
+          }
+        }
+        details2: file(relativePath: {eq: "details-2.jpg"}) {
+          childImageSharp {
+            fixed(width: 500) {
+              originalName
+              srcSet
+            }
+          }
+        }
+        details3: file(relativePath: {eq: "details-3.jpg"}) {
+          childImageSharp {
+            fixed(width: 500) {
+              originalName
+              srcSet
+            }
+          }
+        }
+        love1: file(relativePath: {eq: "love-1.jpg"}) {
+          childImageSharp {
+            fixed(width: 500) {
+              originalName
+              srcSet
+            }
+          }
+        }
+        love2: file(relativePath: {eq: "love-2.jpg"}) {
+          childImageSharp {
+            fixed(width: 500) {
+              originalName
+              srcSet
+            }
+          }
+        }
+        love3: file(relativePath: {eq: "love-3.jpg"}) {
+          childImageSharp {
+            fixed(width: 500) {
+              originalName
+              srcSet
+            }
+          }
+        }
       }
     `}
-    render={data => <Img fluid={data[name].childImageSharp.fluid} />}
+    render={data => fixed ? <Img fixed={data[name].childImageSharp.fixed} /> 
+                              : <Img fluid={data[name].childImageSharp.fluid} />}
   />
 )
 export default Image

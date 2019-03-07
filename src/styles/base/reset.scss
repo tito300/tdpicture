@@ -25,6 +25,10 @@
     font-family: 'hand1';
     src: url(/fonts/handwriting-1.ttf);
 }
+@font-face {
+    font-family: 'hand2';
+    src: url('/fonts/Jennifer Lynne.ttf');
+}
 	
 /* Let's default this puppy out
 -------------------------------------------------------------------------------*/
@@ -37,6 +41,7 @@ html, body, body div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquot
 	font-weight: normal;
 	vertical-align: baseline;
 	background: transparent;
+	
 }
 
 article, aside, figure, footer, header, nav, section, details, summary {display: block;}

@@ -1,8 +1,10 @@
 import { Link, StaticQuery, graphql } from "gatsby"
 import PropTypes from "prop-types"
 import React, { Component } from "react"
-// import Img from "./image"
+import Img from "./image"
 import HeaderAnimatedText from "./HeaderAnimatedText"
+// import FontAwesome from 'react-fontawesome';
+import { IoIosArrowDown } from 'react-icons/io';
 
 
 import "../styles/component/header.scss"
@@ -46,6 +48,16 @@ class Header extends Component {
       imgClassName: "background-img show",
       imageLoaded: true
     })
+  }
+
+  scrollToId = (e) => {
+    e.preventDefault();
+    console.dir(e.currentTarget);
+    if(e.currentTarget.dataset.to){
+      document.querySelector(`#${e.currentTarget.dataset.to}`).scrollIntoView({
+        behavior: 'smooth',
+      })
+    }
   }
 
   render() {
@@ -118,23 +130,7 @@ class Header extends Component {
         return (
           <header id="header" 
             className={this.state.imageLoaded ? 'img-loaded' : ''}
-          >
-          {console.log(document.documentElement.clientWidth)}
-            <div className="lens-image"/>
-            <div className="background-photo">
-              <picture className={this.state.imageLoaded ? "blurred-img-wrapper hide" : "blurred-img-wrapper"}>
-                <source media="(max-width: 1200px)" srcSet={data.blurred.childImageSharp.fixed.srcSet}/>
-                <source media="(max-width: 1400px)" srcSet={data.blurredWide.childImageSharp.fixed.srcSet}/>
-                <source media="(max-width: 2100px)" srcSet={data.blurredExtraWide.childImageSharp.fixed.srcSet}/>
-                <img className="background-img-blurred" width="100%" srcSet={data.blurred.childImageSharp.fixed.srcSet}/>
-              </picture>
-                <picture>
-                  <source media="(max-width: 1200px)" srcSet={data.headerMid.childImageSharp.fluid.srcSet}/>
-                  <source media="(max-width: 1400px)" srcSet={data.headerLarge.childImageSharp.fluid.srcSet}/>
-                  <source media="(max-width: 2100px)" srcSet={data.headerExtraLarge.childImageSharp.fluid.srcSet}/>
-                  <img className={imgClassName} onLoad={this.showImage} src={data.headerMid.childImageSharp.fluid.srcSet}/>
-                </picture>
-            </div>
+          > 
             <div className="title-wrapper">{siteTitle}</div>
             <nav className="nav-wrapper">
               <ul className="nav">
@@ -153,6 +149,26 @@ class Header extends Component {
               </ul>
             </nav>
             <HeaderAnimatedText />
+            <div className="imgs-slider__wrapper">
+              <div className="imgs-slider__part">
+                <Img name="love1" fixed={true}></Img>
+                <Img name="moments1" fixed={true}></Img>
+                <Img name="details1" fixed={true}></Img>
+              </div>
+              <div className="imgs-slider__part">
+                <Img name="details3" fixed={true}></Img>
+                <Img name="moments2" fixed={true}></Img>
+                <Img name="love2" fixed={true}></Img>
+              </div>
+              <div className="imgs-slider__part">
+                <Img name="love3" fixed={true}></Img>              
+                <Img name="moments3" fixed={true}></Img>              
+                <Img name="details2" fixed={true}></Img>              
+              </div>
+            </div>
+            <a data-to="main-container" onClick={this.scrollToId}>
+              <IoIosArrowDown className="scroll-down" />
+            </a>
           </header>
         )
     
