@@ -1,3 +1,5 @@
+const config = require('./config/config.json');
+
 module.exports = {
   siteMetadata: {
     title: `TD Photography`,
@@ -5,6 +7,24 @@ module.exports = {
     author: `Tarek Demachkie`,
   },
   plugins: [
+    // {
+    //   resolve: 'gatsby-source-s3-image',
+    //   options: {
+    //     bucketName: 'td-photography',
+    //     protocol: 'https',
+    //   }
+    // },
+    {
+      resolve: 'gatsby-source-s3',
+      options: {
+        name: 'allS3Image',
+        aws: {
+          accessKeyId: config.accessKeyId,
+          secretAccessKey: config.secretAccessKeyId,
+        },
+        buckets: ['td-photography'],
+      },
+    },
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
@@ -25,7 +45,7 @@ module.exports = {
         theme_color: `#663399`,
         display: `minimal-ui`,
         icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
-      },
+      }
     },
     `gatsby-plugin-sass`,
     // this (optional) plugin enables Progressive Web App + Offline functionality

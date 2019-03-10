@@ -32,9 +32,9 @@ const Layout = ({ children }) => (
           id="main-container"
           style={{
             margin: `0 auto`,
-            maxWidth: 1100,
+            maxWidth: 1200,
             padding: `0px 10px 10px`,
-            paddingTop: '20px',
+            paddingTop: '60px',
           }}
         >
           <main id="main">{children}</main>

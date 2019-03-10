@@ -56,6 +56,7 @@ class Header extends Component {
     if(e.currentTarget.dataset.to){
       document.querySelector(`#${e.currentTarget.dataset.to}`).scrollIntoView({
         behavior: 'smooth',
+        block: 'center',
       })
     }
   }
@@ -166,9 +167,9 @@ class Header extends Component {
                 <Img name="details2" fixed={true}></Img>              
               </div>
             </div>
-            <a data-to="main-container" onClick={this.scrollToId}>
+            <Link data-to="main-container" onClick={this.scrollToId}>
               <IoIosArrowDown className="scroll-down" />
-            </a>
+            </Link>
           </header>
         )
     
