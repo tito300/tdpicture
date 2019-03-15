@@ -3,8 +3,8 @@ import PropTypes from "prop-types"
 import React, { Component } from "react"
 import Img from "./image"
 import HeaderAnimatedText from "./HeaderAnimatedText"
+import ImageSlider from "./image_slider.js"
 // import FontAwesome from 'react-fontawesome';
-import { IoIosArrowDown } from 'react-icons/io';
 
 
 import "../styles/component/header.scss"
@@ -34,8 +34,6 @@ class Header extends Component {
 
   componentDidUpdate() {
     const el = document.querySelector('nav');
-    const header = document.querySelector('header')
-    const clientWidth = document.documentElement.clientWidth;
 
 
     this.state.scroll > this.state.top ? 
@@ -56,7 +54,7 @@ class Header extends Component {
     if(e.currentTarget.dataset.to){
       document.querySelector(`#${e.currentTarget.dataset.to}`).scrollIntoView({
         behavior: 'smooth',
-        block: 'center',
+        block: 'start',
       })
     }
   }
@@ -132,14 +130,16 @@ class Header extends Component {
           <header id="header" 
             className={this.state.imageLoaded ? 'img-loaded' : ''}
           > 
-            <div className="title-wrapper">{siteTitle}</div>
+            <Link to="/">
+              <div className="title-wrapper">{siteTitle}</div>
+            </Link>
             <nav className="nav-wrapper">
               <ul className="nav">
                 <li className="nav-li">
-                  <Link to="#">About us</Link>
+                  <Link to="/aboutus">About us</Link>
                 </li>
                 <li className="nav-li">
-                  <Link to="#">Work</Link>
+                  <Link to="/#work-display">Work</Link>
                 </li>
                 <li className="nav-li">
                   <Link to="#">Pricing</Link>
@@ -149,27 +149,13 @@ class Header extends Component {
                 </li>
               </ul>
             </nav>
-            <HeaderAnimatedText />
-            <div className="imgs-slider__wrapper">
-              <div className="imgs-slider__part">
-                <Img name="love1" fixed={true}></Img>
-                <Img name="moments1" fixed={true}></Img>
-                <Img name="details1" fixed={true}></Img>
-              </div>
-              <div className="imgs-slider__part">
-                <Img name="details3" fixed={true}></Img>
-                <Img name="moments2" fixed={true}></Img>
-                <Img name="love2" fixed={true}></Img>
-              </div>
-              <div className="imgs-slider__part">
-                <Img name="love3" fixed={true}></Img>              
-                <Img name="moments3" fixed={true}></Img>              
-                <Img name="details2" fixed={true}></Img>              
-              </div>
-            </div>
+
+            {/* <HeaderAnimatedText />
+            <ImageSlider />
+
             <Link data-to="main-container" onClick={this.scrollToId}>
               <IoIosArrowDown className="scroll-down" />
-            </Link>
+            </Link> */}
           </header>
         )
     

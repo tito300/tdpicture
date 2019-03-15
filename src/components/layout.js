@@ -14,7 +14,7 @@ import "../styles/base/reset.scss"
 import "../styles/layout/layout.scss"
 import "../styles/component/header.scss"
 
-const Layout = ({ children }) => (
+const Layout = ({ children, themeColor }) => (
   <StaticQuery
     query={graphql`
       query SiteTitleQuery {
@@ -30,19 +30,12 @@ const Layout = ({ children }) => (
         <Header siteTitle={data.site.siteMetadata.title} />
         <div
           id="main-container"
-          style={{
-            margin: `0 auto`,
-            maxWidth: 1200,
-            padding: `0px 10px 10px`,
-            paddingTop: '60px',
-          }}
+          style={themeColor === 'black' ? { backgroundColor:'black', color: 'white'} : {}}
         >
-          <main id="main">{children}</main>
-          {/* <footer>
-            © {new Date().getFullYear()}, Built with
-            {` `}
-            <a href="https://www.gatsbyjs.org">Gatsby</a>
-          </footer> */}
+          <main id="main" >{children}</main>
+          <footer style={{width: 'fit-content', margin: '30px auto 0', paddingBottom: '30px', marginTop: '40px'}}>
+            TK Photography© {new Date().getFullYear()}
+          </footer>
         </div>
       </>
     )}
