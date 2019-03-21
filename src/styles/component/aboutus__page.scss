@@ -19,7 +19,7 @@
     }
 
     .aboutus-presentation__box-1 {
-        height: 370px;
+        height: 390px;
         min-height: fit-content;
         width: 70%;
         background-color: black;
@@ -35,7 +35,7 @@
         // background-color: blue;
     }
     .aboutus-presentation__box-2 {
-        height: 270px;
+        height: 290px;
         min-height: fit-content;
         width: 29%;
         // min-width: 300px;
@@ -99,7 +99,7 @@
             // z-index: -5;
             &.gi-1 {
                 transform: translateX(-270px);
-                animation: first-aboutus 10.5s ease-in-out 1s 3;
+                animation: first-aboutus 10.5s ease-in-out 1s 2;
                 &:hover {
                     transform: translateX(0px);
                     z-index: 5;
@@ -127,7 +127,7 @@
             }
             &.gi-2 {
                 transform: translate(-645px, -15px);
-                animation: second-aboutus 10.5s ease-in-out 1s 3;
+                animation: second-aboutus 10.5s ease-in-out 1s 2;
                 &:hover {
                     transform: translate(-360px, -15px);
                     z-index: 5;
@@ -162,7 +162,7 @@
             }
             &.gi-3 {
                 transform: translate(-1020px, -30px);
-                animation: third-aboutus 10.5s ease-in-out 1s 3 forwards;
+                animation: third-aboutus 10.5s ease-in-out 1s 2 forwards;
                 &:hover {
                     transform: translate(-710px, -30px);
                     z-index: 5;
@@ -219,7 +219,7 @@
         background-image: url('/imgs/arraw-1.png');
         opacity: 0;
         top: -430px;
-        animation: first-arrow-aboutus 10.5s ease-in-out 1s 3 forwards;
+        animation: first-arrow-aboutus 10.5s ease-in-out 1s 2 forwards;
             @keyframes first-arrow-aboutus {
                 16% {
                     opacity: 1;
@@ -247,7 +247,7 @@
         opacity: 0;
         background-image: url('/imgs/arraw-2.png');
 
-        animation: second-arrow-aboutus 10.5s ease-in-out 1s 3 forwards;
+        animation: second-arrow-aboutus 10.5s ease-in-out 1s 2 forwards;
 
             @keyframes second-arrow-aboutus {
                 44% {
@@ -270,7 +270,7 @@
         // top: -370px;
         background-image: url('/imgs/arraw-1.png');
         opacity: 0;
-        animation: third-text-aboutus 10.5s ease-in-out 1s 3 forwards;
+        animation: third-text-aboutus 10.5s ease-in-out 1s 2 forwards;
 
             @keyframes third-text-aboutus {
                 75% {
@@ -300,7 +300,7 @@
             opacity: 0;
             position: absolute;
             font-size: 50px;
-            animation: first-text-aboutus 10.5s ease-in-out 1s 3 forwards;
+            animation: first-text-aboutus 10.5s ease-in-out 1s 2 forwards;
             @keyframes first-text-aboutus {
                 16% {
                     opacity: 1;
@@ -321,7 +321,7 @@
             position: absolute;
             left: -120px;
             font-size: 60px;
-            animation: second-text-aboutus 10.5s ease-in-out 1s 3 forwards;
+            animation: second-text-aboutus 10.5s ease-in-out 1s 2 forwards;
 
             @keyframes second-text-aboutus {
                 44% {
@@ -344,7 +344,7 @@
             opacity: 0;
             position: absolute;
             font-size: 80px;
-            animation: third-text-aboutus 10.5s ease-in-out 1s 3 forwards;
+            animation: third-text-aboutus 10.5s ease-in-out 1s 2 forwards;
 
             @keyframes third-text-aboutus {
                 75% {

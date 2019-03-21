@@ -43,8 +43,6 @@ class IndexPage extends Component {
       this.setState({
         openViewer: true,
         currentViewerId: parseInt(i),
-      }, () => {
-        setTimeout(()=> this.setState({initialView: false}), 500);
       })
   }
 
