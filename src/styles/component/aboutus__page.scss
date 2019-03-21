@@ -99,7 +99,7 @@
             // z-index: -5;
             &.gi-1 {
                 transform: translateX(-270px);
-                animation: first-aboutus 10.5s ease-in-out 1s 1;
+                animation: first-aboutus 10.5s ease-in-out 1s 3;
                 &:hover {
                     transform: translateX(0px);
                     z-index: 5;
@@ -127,7 +127,7 @@
             }
             &.gi-2 {
                 transform: translate(-645px, -15px);
-                animation: second-aboutus 10.5s ease-in-out 1s 1;
+                animation: second-aboutus 10.5s ease-in-out 1s 3;
                 &:hover {
                     transform: translate(-360px, -15px);
                     z-index: 5;
@@ -162,7 +162,7 @@
             }
             &.gi-3 {
                 transform: translate(-1020px, -30px);
-                animation: third-aboutus 10.5s ease-in-out 1s 1 forwards;
+                animation: third-aboutus 10.5s ease-in-out 1s 3 forwards;
                 &:hover {
                     transform: translate(-710px, -30px);
                     z-index: 5;
@@ -199,4 +199,166 @@
         }
         
     }
+
+    .arrow-wrapper {
+        position: relative;
+        width: 300px;
+    }
+
+   .arrow {
+    position: absolute;
+    height: 150px;
+    width: 100%;
+    top: -460px;
+    left: 50px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    // transform: rotate(103deg);
+
+    &.arrow-1 {
+        background-image: url('/imgs/arraw-1.png');
+        opacity: 0;
+        top: -430px;
+        animation: first-arrow-aboutus 10.5s ease-in-out 1s 3 forwards;
+            @keyframes first-arrow-aboutus {
+                16% {
+                    opacity: 1;
+                    // transform: translateX(0px);
+                    // z-index: 2;
+                }
+                33% {
+                    opacity: 1;
+                    // transform: translateX(0px);
+                    // z-index: 2;
+                }
+                34% {
+                    opacity: 0;
+                }
+                90% {
+                    opacity: 0;
+                    // transform: translateX(0px);
+                }
+            }
+        
+    }
+    &.arrow-2 {
+        // top: -200px;
+        left: 130px;
+        opacity: 0;
+        background-image: url('/imgs/arraw-2.png');
+
+        animation: second-arrow-aboutus 10.5s ease-in-out 1s 3 forwards;
+
+            @keyframes second-arrow-aboutus {
+                44% {
+                    opacity: 0;
+                }
+                49%{
+                    opacity: 1
+                }
+
+                67% {
+                    opacity: 1;
+                }
+                72%{
+                    opacity: 0;
+                    
+                }
+            }
+    }
+    &.arrow-3 {
+        // top: -370px;
+        background-image: url('/imgs/arraw-1.png');
+        opacity: 0;
+        animation: third-text-aboutus 10.5s ease-in-out 1s 3 forwards;
+
+            @keyframes third-text-aboutus {
+                75% {
+                    opacity: 0;
+                }
+                79% {
+                    opacity: 1;
+
+                }
+                100% {
+                    opacity: 1;
+                }
+
+            }
+    }
+   }
+   .arrow-text-wrapper {
+        position: relative;
+        height: 150px;
+        top: -480px;
+        left: 190px;
+        font-size: 50px;
+        text-align: center;
+        font-family: hand1;
+
+        >:nth-child(1) {
+            opacity: 0;
+            position: absolute;
+            font-size: 50px;
+            animation: first-text-aboutus 10.5s ease-in-out 1s 3 forwards;
+            @keyframes first-text-aboutus {
+                16% {
+                    opacity: 1;
+                }
+                33% {
+                    opacity: 1;
+                }
+                34% {
+                    opacity: 0;
+                }
+                90% {
+                    opacity: 0;
+                }
+            }
+        }
+        >:nth-child(2) {
+            opacity: 0;
+            position: absolute;
+            left: -120px;
+            font-size: 60px;
+            animation: second-text-aboutus 10.5s ease-in-out 1s 3 forwards;
+
+            @keyframes second-text-aboutus {
+                44% {
+                    opacity: 0;
+                }
+                49%{
+                    opacity: 1
+                }
+
+                67% {
+                    opacity: 1;
+                }
+                72%{
+                    opacity: 0;
+                    
+                }
+            }
+        }
+        >:nth-child(3) {
+            opacity: 0;
+            position: absolute;
+            font-size: 80px;
+            animation: third-text-aboutus 10.5s ease-in-out 1s 3 forwards;
+
+            @keyframes third-text-aboutus {
+                75% {
+                    opacity: 0;
+                }
+                79% {
+                    opacity: 1;
+
+                }
+                100% {
+                    opacity: 1;
+                }
+
+            }
+        }
+   } 
 }

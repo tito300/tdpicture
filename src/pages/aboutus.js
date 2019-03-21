@@ -36,6 +36,16 @@ export default ({ data }) => (
                             style={{ height: data.personal_photo.childImageSharp.fixed.height, width: data.personal_photo.childImageSharp.fixed.width, marginRight: '10px' }} 
                             imgStyle={{height: '100%', width: 'auto'}}
                         />
+                        <div className="arrow-wrapper">
+                            <div className="arrow arrow-1"></div>
+                            <div className="arrow arrow-2"></div>                        
+                            <div className="arrow arrow-3"></div>
+                            <div className="arrow-text-wrapper">
+                                <p>Location</p>
+                                <p>Work</p>
+                                <p>US</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div className="aboutus-presentation__box-3"></div>
