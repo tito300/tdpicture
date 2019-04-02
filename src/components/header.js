@@ -60,7 +60,7 @@ class Header extends Component {
   }
 
   render() {
-    const { siteTitle } = this.props;
+    const { siteTitle, themeColor } = this.props;
     const { imgClassName } = this.state;
 
     return (
@@ -127,25 +127,25 @@ class Header extends Component {
       `} 
       render={(data) => {
         return (
-          <header id="header" 
+          <header id="header" style={themeColor === 'white' ? { backgroundColor:'white', color: 'black'} : {}} 
             className={this.state.imageLoaded ? 'img-loaded' : ''}
           > 
             <Link to="/">
-              <div className="title-wrapper">{siteTitle}</div>
+              <div style={themeColor === 'white' ? {color: 'black'} : {}} className="title-wrapper">{siteTitle}</div>
             </Link>
-            <nav className="nav-wrapper">
+            <nav className="nav-wrapper" style={themeColor === 'white' ? {backgroundColor: '#ffe2e2e1'} : {}}>
               <ul className="nav">
                 <li className="nav-li">
-                  <Link to="/aboutus">About us</Link>
+                  <Link to="/aboutus" style={themeColor === 'white' ? {color: 'black', textShadow: 'none'} : {}}>About us</Link>
                 </li>
                 <li className="nav-li">
-                  <Link to="/#work-display">Work</Link>
+                  <Link to="/#work-display" style={themeColor === 'white' ? {color: 'black', textShadow: 'none'} : {}}>Work</Link>
                 </li>
                 <li className="nav-li">
-                  <Link to="#">Pricing</Link>
+                  <Link to="/pricing" style={themeColor === 'white' ? {color: 'black', textShadow: '2px -1px 1px white'} : {}}>Pricing</Link>
                 </li>
                 <li className="nav-li">
-                  <Link to="#">Blog</Link>
+                  <Link to="#" style={themeColor === 'white' ? {color: 'black', textShadow: 'none'} : {}}>Blog</Link>
                 </li>
               </ul>
             </nav>

@@ -27,7 +27,7 @@ const Layout = ({ children, themeColor }) => (
     `}
     render={data => (
       <>
-        <Header siteTitle={data.site.siteMetadata.title} />
+        <Header siteTitle={data.site.siteMetadata.title} themeColor={themeColor}/>
         <div
           id="main-container"
           style={themeColor === 'black' ? { backgroundColor:'black', color: 'white'} : {}}
