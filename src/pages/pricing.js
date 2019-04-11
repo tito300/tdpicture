@@ -6,7 +6,7 @@ import '../styles/component/pricing__page.scss'
 
 export default ({ data }) => (
     <Layout themeColor='white'>
-        <div id='pricing-wrapper'>
+        <div id='pricing-wrapper' className="page-wrapper">
             <div className="page-title">
                 <h2 className="title">PRICING</h2>
             </div>

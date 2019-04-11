@@ -145,7 +145,7 @@ class Header extends Component {
                   <Link to="/pricing" style={themeColor === 'white' ? {color: 'black', textShadow: '2px -1px 1px white'} : {}}>Pricing</Link>
                 </li>
                 <li className="nav-li">
-                  <Link to="#" style={themeColor === 'white' ? {color: 'black', textShadow: 'none'} : {}}>Blog</Link>
+                  <Link to="/contact-us" style={themeColor === 'white' ? {color: 'black', textShadow: 'none', textShadow: '2px -1px 1px white'} : {}}>Contact Us</Link>
                 </li>
               </ul>
             </nav>

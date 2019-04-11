@@ -3,3 +3,22 @@
     height: fit-content;
     // background-color: rgb(218, 218, 218);
 }
+
+.page-wrapper {
+    width: 900px;
+    margin: 0 auto;
+    height: fit-content;
+    min-height: 75vh;
+
+    .page-title {
+        width: 100%;
+        text-align: center;
+        padding: 50px 0 80px;
+    }
+    .title {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 28px;
+        color: rgb(48, 48, 48);
+        letter-spacing: 7px;
+    }
+}    
