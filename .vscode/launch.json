@@ -9,7 +9,7 @@
             "type": "node",
             "request": "launch",
             "protocol": "inspector",
-            "program": "${workspaceRoot}/node_modules/gatsby/dist/bin/gatsby",
+            "program": "${workspaceRoot}/client/node_modules/gatsby/dist/bin/gatsby",
             "args": [
                 "develop"
             ],
@@ -33,6 +33,12 @@
                 "--nolazy"
             ],
             "sourceMaps": false
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "run app",
+            "program": "${workspaceFolder}/app.js"
         }
     ]
 }

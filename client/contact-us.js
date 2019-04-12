@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Layout from '../components/layout.js'
+import Layout from './src/components/layout.js'
 
 import '../styles/component/contactus__page.scss'
 
@@ -7,7 +7,8 @@ export default class Contactus extends Component {
     state = {
         email: '',
         password: '',
-        body: ''
+        body: '',
+        mounted: true,
     }
 
     handleFormChange = (e) => {
@@ -38,7 +39,7 @@ export default class Contactus extends Component {
                     <div className="page-title">
                         <h1 className='title'>CONTACT US</h1>
                     </div>
-                    <div className="contactus__container">
+                    <div className={`contactus__container ${mounted ? 'fade-in' : ''}`}>
                         <p className="text">Feel free to reach out for any questions you might have!</p>
                         <form action="mailto:tarek.demachkie@gmail.com" method="post" className="contactus__form" onSubmit={this.handleSubmit}>
                             <input type="email" name="email" value={email} onChange={this.handleFormChange} placeholder=" Enter email . ." className="form-input email"/>

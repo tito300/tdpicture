@@ -56,10 +56,14 @@ typings/
 
 # gatsby files
 .cache/
-public/static/
-public/index.html
-public/manifest.webmanifest
-public/render-page.js.map
+public/
+# public/static/
+# public/index.html
+# public/manifest.webmanifest
+# public/render-page.js.map
+
+!public/fonts
+!public/imgs
 
 # Mac files
 .DS_Store

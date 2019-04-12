@@ -3,7 +3,18 @@
     .contactus__container {
         width: 70%;
         margin: 0 auto;
-    }
+        opacity: 0;
+
+        &.fade-in {
+            animation: fade-in 0.3s ease-in forwards;
+
+            @keyframes fade-in {
+                100% {
+                    opacity: 1;
+                }
+            }
+        }
+     }
 
     .text {
         color: rgb(99, 99, 99);

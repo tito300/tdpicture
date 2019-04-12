@@ -1,0 +1,6 @@
+{"message":"::1 - - [12/Apr/2019:15:00:31 +0000] \"GET /contact-us HTTP/1.1\" 404 149\n","level":"info"}
+{"message":"::1 - - [12/Apr/2019:15:00:59 +0000] \"OPTIONS /contactus HTTP/1.1\" 200 4\n","level":"info"}
+{"message":"::1 - - [12/Apr/2019:15:01:47 +0000] \"OPTIONS /contactus HTTP/1.1\" 200 4\n","level":"info"}
+{"message":"::1 - - [12/Apr/2019:15:15:01 +0000] \"OPTIONS /contactus HTTP/1.1\" 200 4\n","level":"info"}
+{"message":"::1 - - [12/Apr/2019:15:28:47 +0000] \"POST /contactus HTTP/1.1\" 200 -\n","level":"info"}
+{"message":"::1 - - [12/Apr/2019:15:30:59 +0000] \"POST /contactus HTTP/1.1\" 200 -\n","level":"info"}
