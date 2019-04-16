@@ -105,8 +105,8 @@ const Image = ({name, style, fixed}) => (
         }
       }
     `}
-    render={data => fixed ? <Img fixed={data[name].childImageSharp.fixed} /> 
-                              : <Img fluid={data[name].childImageSharp.fluid} />}
+    render={data => fixed ? <Img fixed={data[name].childImageSharp.fixed}/> 
+                              : <Img fluid={data[name].childImageSharp.fluid}/>}
   />
 )
 export default Image
