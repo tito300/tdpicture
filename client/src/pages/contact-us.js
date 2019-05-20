@@ -72,7 +72,8 @@ export default class Contactus extends Component {
         let { email, subject, body, failed, success } = this.state;
         return (
             <Layout themeColor='white'>
-                <div id="contact-us__wrapper" className="page-wrapper">
+                {/* to be uncommented when server is deployed */}
+                {/* <div id="contact-us__wrapper" className="page-wrapper">
                     <div className="page-title">
                         <h1 className='title'>CONTACT US</h1>
                     </div>
@@ -87,8 +88,16 @@ export default class Contactus extends Component {
                             <input type="submit" className="form-input submit" value="submit"/>
                         </form>
                     </div>
+                </div> */}
+                <div id="contact-us__wrapper" className="page-wrapper">
+                    <div className="page-title">
+                        <h1 className='title'>CONTACT US</h1>
+                    </div>
+                    <div className="contactus__container fade-in">
+                        <p className="text">Feel free to reach out for any questions you might have!</p>
+                        <p className="text">Email: tarek.demachkie@gmail.com</p>
+                    </div>
                 </div>
-    
             </Layout>
         )
     }

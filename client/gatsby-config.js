@@ -19,8 +19,8 @@ module.exports = {
       options: {
         name: 'allS3Image',
         aws: {
-          accessKeyId: config.accessKeyId,
-          secretAccessKey: config.secretAccessKeyId,
+          accessKeyId: process.env.ACCESS_KEY_ID || require('./config/config.json').accessKeyId,
+          secretAccessKey: process.env.SECRET_ACCESS_KEY_ID || require('./config/config.json').secretAccessKeyId,
         },
         buckets: ['td-photography'],
       },

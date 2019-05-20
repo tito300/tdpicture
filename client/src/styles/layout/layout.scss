@@ -21,4 +21,7 @@
         color: rgb(48, 48, 48);
         letter-spacing: 7px;
     }
+    @media all and (max-width: 450px) {
+        width: 100%;
+    }
 }    

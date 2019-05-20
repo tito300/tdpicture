@@ -17,6 +17,14 @@
         // height: 700px;
         margin:  auto;
         padding: 90px 0;
+
+        @media all and (max-width: 700px) {
+            width: 93vw;
+            max-width: 93vw;
+            padding-top: 40px;
+            flex-direction: column;
+            justify-content: center;
+        }
     }
 
     .aboutus-presentation__box-1 {
@@ -32,8 +40,13 @@
         border-right: 4px solid rgb(228, 38, 133);
         box-shadow: 3px 0 18px -3px black;
         z-index: 10;
-        // border-bottom-right-radius: -20px;
-        // background-color: blue;
+        
+        @media all and (max-width: 700px) {
+            width: 100%;
+            padding-bottom: 50px;
+            // border-bottom-right-radius: 20px;
+            
+        }
     }
     .aboutus-presentation__box-2 {
         height: 290px;
@@ -44,6 +57,21 @@
         border-right: 4px solid rgb(228, 38, 133);
         margin-left: -4px;
         border-top-right-radius: 2px;
+
+        @media all and (max-width: 700px) {
+            width: 93vw;
+            height: 420px;
+            overflow: hidden;
+            margin-top: -2px;
+            margin-left: 0px;
+            border-right: 0px solid rgb(228, 38, 133);
+            border-left: 4px solid rgb(228, 38, 133);
+            border-top: 5px solid rgb(228, 38, 133);
+            // border-top-right-radius: 20px;
+            border-top-left-radius: 20px;
+            border-bottom-left-radius: 70%;
+            padding: 20px 0;
+        }
     }
     .aboutus-presentation__box-3 {
         height: 30px;
@@ -52,6 +80,10 @@
         min-width: 350px;
         z-index: 1;
         background-color: black;
+
+        @media all and (max-width: 700px) {
+            display: none;
+        }
     }
     .aboutus-presentation__box-4 {
         height: 30px;
@@ -66,6 +98,9 @@
         border-bottom-left-radius: 20px;
         margin-left: -4px;
         z-index: 1;
+        @media all and (max-width: 700px) {
+            display: none;
+        }
 
     }
 
@@ -100,7 +135,7 @@
             // z-index: -5;
             &.gi-1 {
                 transform: translateX(-270px);
-                animation: first-aboutus 10.5s ease-in-out 1s 2;
+                animation: first-aboutus 10.5s ease-in-out 1s 3;
                 &:hover {
                     transform: translateX(0px);
                     z-index: 5;
@@ -128,7 +163,7 @@
             }
             &.gi-2 {
                 transform: translate(-645px, -15px);
-                animation: second-aboutus 10.5s ease-in-out 1s 2;
+                animation: second-aboutus 10.5s ease-in-out 1s 3;
                 &:hover {
                     transform: translate(-360px, -15px);
                     z-index: 5;
@@ -163,7 +198,7 @@
             }
             &.gi-3 {
                 transform: translate(-1020px, -30px);
-                animation: third-aboutus 10.5s ease-in-out 1s 2 forwards;
+                animation: third-aboutus 10.5s ease-in-out 1s 3 forwards;
                 &:hover {
                     transform: translate(-710px, -30px);
                     z-index: 5;
@@ -215,12 +250,15 @@
     background-size: contain;
     background-repeat: no-repeat;
     // transform: rotate(103deg);
+    @media all and (max-width: 700px) {
+        display: none;
+    }
 
     &.arrow-1 {
         background-image: url('/imgs/arraw-1.png');
         opacity: 0;
         top: -430px;
-        animation: first-arrow-aboutus 10.5s ease-in-out 1s 2 forwards;
+        animation: first-arrow-aboutus 10.5s ease-in-out 1s 3 forwards;
             @keyframes first-arrow-aboutus {
                 16% {
                     opacity: 1;
@@ -248,7 +286,7 @@
         opacity: 0;
         background-image: url('/imgs/arraw-2.png');
 
-        animation: second-arrow-aboutus 10.5s ease-in-out 1s 2 forwards;
+        animation: second-arrow-aboutus 10.5s ease-in-out 1s 3 forwards;
 
             @keyframes second-arrow-aboutus {
                 44% {
@@ -271,7 +309,7 @@
         // top: -370px;
         background-image: url('/imgs/arraw-1.png');
         opacity: 0;
-        animation: third-text-aboutus 10.5s ease-in-out 1s 2 forwards;
+        animation: third-text-aboutus 10.5s ease-in-out 1s 3 forwards;
 
             @keyframes third-text-aboutus {
                 75% {
@@ -297,11 +335,19 @@
         text-align: center;
         font-family: hand1;
 
+        @media all and (max-width: 700px) {
+            top: 0px;
+            left: 150px;
+            // right: 30px;
+            position: auto;
+            // display: none;
+        }
+
         >:nth-child(1) {
             opacity: 0;
             position: absolute;
             font-size: 50px;
-            animation: first-text-aboutus 10.5s ease-in-out 1s 2 forwards;
+            animation: first-text-aboutus 10.5s ease-in-out 1s 3 forwards;
             @keyframes first-text-aboutus {
                 16% {
                     opacity: 1;
@@ -322,7 +368,10 @@
             position: absolute;
             left: -120px;
             font-size: 60px;
-            animation: second-text-aboutus 10.5s ease-in-out 1s 2 forwards;
+            animation: second-text-aboutus 10.5s ease-in-out 1s 3 forwards;
+            @media all and (max-width: 700px) {
+                left: 20px;
+            }
 
             @keyframes second-text-aboutus {
                 44% {
@@ -345,7 +394,11 @@
             opacity: 0;
             position: absolute;
             font-size: 80px;
-            animation: third-text-aboutus 10.5s ease-in-out 1s 2 forwards;
+            animation: third-text-aboutus 10.5s ease-in-out 1s 3 forwards;
+            @media all and (max-width: 700px) {
+                top: -25px;
+                left: 30px;
+            }
 
             @keyframes third-text-aboutus {
                 75% {

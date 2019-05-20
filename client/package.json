@@ -40,7 +40,10 @@
     "format": "prettier --write src/**/*.{js,jsx}",
     "start": "npm run develop",
     "serve": "gatsby serve",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\"",
+    "predeploy": "npm run build",
+    "deploy": "aws s3 sync public/ s3://tdpicture.com",
+    "postdeploy": "aws cloudfront create-invalidation --distribution-id E1TIIMSMAFR5GN --paths '/*' && rm -rf build"
   },
   "repository": {
     "type": "git",
