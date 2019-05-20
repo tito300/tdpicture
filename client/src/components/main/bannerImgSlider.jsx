@@ -1,7 +1,6 @@
-import { Link, StaticQuery, graphql } from "gatsby"
 import PropTypes from "prop-types"
-import React, { Component } from "react"
-import Image from "./image"
+import React from "react"
+import Image from "../image"
 
 const ImageSlider = () => (
     <div className="imgs-slider__wrapper">

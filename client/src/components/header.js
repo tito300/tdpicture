@@ -1,9 +1,6 @@
 import { Link, StaticQuery, graphql } from "gatsby"
 import PropTypes from "prop-types"
 import React, { Component } from "react"
-import Img from "./image"
-import HeaderAnimatedText from "./HeaderAnimatedText"
-import ImageSlider from "./image_slider.js"
 // import FontAwesome from 'react-fontawesome';
 
 

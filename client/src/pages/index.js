@@ -1,17 +1,18 @@
 import React, { Component } from "react"
 import { Link, graphql } from "gatsby"
-import { TiPin } from "react-icons/ti";
+import { TiPin } from "react-icons/ti"
 
 // import Img from "./image"
-import HeaderAnimatedText from "../components/HeaderAnimatedText"
-import ImageSlider from "../components/image_slider.js"
+import InfoSection from "../components/main/infoSection"
+import ImagesDisplay from "../components/main/imagesDisplay"
+import Banner from "../components/main/banner"
+import ViewerModel from "../components/main/viewerModel"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import Img from "gatsby-image"
-import { IoIosArrowDown, IoIosArrowForward, IoIosArrowBack } from 'react-icons/io';
+import { IoIosArrowDown, IoIosArrowForward, IoIosArrowBack } from 'react-icons/io'
 
-import '../styles/component/main-page__body.scss';
+import '../styles/component/main-page__body.scss'
 
 
 class IndexPage extends Component {
@@ -47,7 +48,9 @@ class IndexPage extends Component {
   }
 
   closeImageViewer = (e) => {
-    if(e.target.className.includes && e.target.className.includes('viewer-wrapper')) {
+    if(e.target.className.includes && 
+      (e.target.className.includes('viewer-wrapper') || e.target.className.includes('close-btn'))
+    ) {
       this.setState({
         openViewer: false,
         currentViewerId: null,
@@ -96,31 +99,21 @@ class IndexPage extends Component {
   
   render() {
     let { data } = this.props;
-    let { shuffledEdges, currentViewerId, animate } = this.state;
+    let { shuffledEdges, currentViewerId, animate, openViewer } = this.state;
     let size = Math.floor(data.all_images.edges.length / 4);
     
     return (
     <Layout>
       <SEO title="Home" keywords={[`photography`, `wedding`, `engagement`]} />
-      <div className={this.state.openViewer ? `viewer-wrapper open` : 'viewer-wrapper'} onClick={this.closeImageViewer}>
-        <div className="viewer-box">
-          <div className="viewer-image__wrapper" >
-            <div><IoIosArrowBack className="viewer__arrow-back" onClick={this.handleArrowClick}/></div>
-            {currentViewerId !== null ? <img ref={this.imgRef} className={`viewer-img {animate}`}
-                                          srcSet={shuffledEdges[currentViewerId].node.file.image.fluid.srcSet} style={{maxHeight: '100%'}}/>
-                : null}
-            <div><IoIosArrowForward className="viewer__arrow-forward" onClick={this.handleArrowClick}/></div>  
-          </div>
-        </div>
-      </div>
-      <div id="mainPage__banner">
-        <HeaderAnimatedText />
-        <ImageSlider />
-                
-        <Link /* data-to="main-container" onClick={this.scrollToId} */ onClick={(e)=>{ e.preventDefault(); document.querySelector('.body').scrollIntoView({behavior: 'smooth', block: 'start'}) }}>
-                  <IoIosArrowDown className="scroll-down" />
-        </Link>    
-      </div>
+      <ViewerModel 
+        shuffledEdges={shuffledEdges} 
+        openViewer={openViewer} 
+        closeImageViewer={this.closeImageViewer} 
+        handleArrowClick={this.handleArrowClick} 
+        imgRef={this.imgRef} 
+        currentViewerId={currentViewerId}
+      />
+      <Banner />
       <div className="body" style={{
               margin: `0 auto`,
               maxWidth: 1200,
@@ -128,49 +121,11 @@ class IndexPage extends Component {
               padding: `0px 10px 10px`,
               paddingTop: '0px',
             }}>
-        <div className="info-section">
-          <div className="info-wrapper">
-            <div className="info__text-section">
-              <h3>Our Philosophy</h3>
-              <p>We are a family owned business based in Dallas. We pride ourselves in capturing moments that will be treasured forever. The Small details give our photos life and allow the moments to be vibrant and alive. Love is at the center of all our picture.</p>
-            </div>
-            <div className="info__img-section">
-              <Img fluid={data.info_img.edges[0].node.file.image.fluid} style={{width: '100%', boxShadow: '0 0 20px #d5d5d5'}} imgStyle={{width: '100%', height: 'auto'}}/>
-            </div>
-          </div>
-        </div>
-        <div id="work-display" className="photos-display">
-          <div className="photo-display__column">
-            {shuffledEdges.slice(0, size).map(({ node }, i)=> {
-              if([4].includes(i)) return (<div id={`photo-${i}`} key={node.id} className={`photo-container`} data-id={node.id} onClick={this.openImageViewer}>
-                  <Img fluid={node.file.image.fluid} style={{marginBottom: '14px', transform: 'scale(1.1) rotate(-3deg)', zIndex: 2, boxShadow: '0px 0px 21px -3px black'}}/>
-                </div>)
-              if([11].includes(i)) return (<div id={`photo-${i}`} key={node.id} className={`photo-container`} data-id={node.id} onClick={this.openImageViewer}><Img fluid={node.file.image.fluid} style={{marginBottom: '14px', transform: 'scale(1.1) rotate(3deg)', zIndex: 2, boxShadow: '0px 0px 21px -3px black'}}/></div>)
-              return (<div id={`photo-${i}`} key={node.id} className={`photo-container`} data-id={node.id} onClick={this.openImageViewer}><Img fluid={node.file.image.fluid} style={{marginBottom: '14px'}}/></div>)
-            })}  
-          </div>
-          <div className="photo-display__column">
-            {shuffledEdges.slice(size, (size + size)).map(({ node }, i)=> {
-              if([6].includes(i)) return (<div id={`photo-${size + i}`} key={node.id} className={`photo-container`} data-id={node.id} onClick={this.openImageViewer}><Img fluid={node.file.image.fluid} style={{marginBottom: '14px', transform: 'scale(1.1) rotate(3deg)', zIndex: 2, boxShadow: '0px 0px 21px -3px black'}}/></div>)
-              if([10].includes(i)) return (<div id={`photo-${size + i}`} key={node.id} className={`photo-container`} data-id={node.id} onClick={this.openImageViewer}><Img fluid={node.file.image.fluid} style={{marginBottom: '14px', transform: 'scale(1.1) rotate(-3deg)', zIndex: 2, boxShadow: '0px 0px 21px -3px black'}}/></div>)
-                return (<div id={`photo-${size + i}`} className={`photo-container`} data-id={node.id} onClick={this.openImageViewer}><Img fluid={node.file.image.fluid} style={{marginBottom: '14px'}}/></div>)
-              })} 
-          </div>
-          <div className="photo-display__column">
-            {shuffledEdges.slice((size + size), (size + size + size)).map(({ node }, i)=> {
-              if([1].includes(i)) return (<div id={`photo-${size + size + i}`} key={node.id} className={`photo-container`} data-id={node.id} onClick={this.openImageViewer}><Img fluid={node.file.image.fluid} style={{marginBottom: '14px', transform: 'scale(1.1) rotate(3deg)', zIndex: 2, boxShadow: '0px 0px 21px -3px black'}}/></div>)
-              if([4].includes(i)) return (<div id={`photo-${size + size + i}`} key={node.id} className={`photo-container`} data-id={node.id} onClick={this.openImageViewer}><Img fluid={node.file.image.fluid} style={{marginBottom: '14px', transform: 'scale(1.1) rotate(-3deg)', zIndex: 2, boxShadow: '0px 0px 21px -3px black'}}/></div>)
-                  return (<div id={`photo-${size + size + i}`} className={`photo-container`} data-id={node.id} onClick={this.openImageViewer}><Img fluid={node.file.image.fluid} style={{marginBottom: '14px'}}/></div>)
-            })} 
-          </div>
-          <div className="photo-display__column">
-            {shuffledEdges.slice((size + size + size), (size + size + size + size)).map(({ node }, i)=> {
-              if([6].includes(i)) return (<div id={`photo-${size + size + size + i}`} key={node.id} className={`photo-container`} data-id={node.id} onClick={this.openImageViewer}><Img fluid={node.file.image.fluid} style={{marginBottom: '14px', transform: 'scale(1.1) rotate(3deg)', zIndex: 2, boxShadow: '0px 0px 21px -3px black'}}/></div>)
-              if([11].includes(i)) return (<div id={`photo-${size + size + size + i}`} key={node.id} className={`photo-container`} data-id={node.id} onClick={this.openImageViewer}><Img fluid={node.file.image.fluid} style={{marginBottom: '14px', transform: 'scale(1.1) rotate(-3deg)', zIndex: 2, boxShadow: '0px 0px 21px -3px black'}}/></div>)
-                    return (<div id={`photo-${size + size + size + i}`} key={node.id} className={`photo-container`} data-id={node.id} onClick={this.openImageViewer}><Img fluid={node.file.image.fluid} style={{marginBottom: '14px'}}/></div>)
-            })}
-          </div>
-        </div>
+        <InfoSection data={data} />
+        <ImagesDisplay  
+          shuffledEdges={shuffledEdges} 
+          size={size} 
+          openImageViewer={this.openImageViewer}/>
       </div>
     </Layout>
   )

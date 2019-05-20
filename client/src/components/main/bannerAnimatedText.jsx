@@ -8,7 +8,6 @@ export default class AnimatedText extends Component {
         show: 'show',
     }
     getAnimatedSpan = () => {
-        const {currentIndex, span} = this.state;
         return(<span className="animated-text__animation">{}</span>)
     }
     render() {

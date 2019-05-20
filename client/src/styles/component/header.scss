@@ -1,6 +1,7 @@
 
 
 #header {
+  -webkit-appearance: none;
   background-color: black;
   height: 25vh;
   min-height: fit-content;
@@ -89,8 +90,8 @@
     position: relative;
 
     @media all and (max-width: 700px) {
-      margin-right: 18px;
-      margin-left: 18px;
+      margin-right: 13px;
+      margin-left: 13px;
       a {
         font-size: 13px !important;
       }
@@ -105,6 +106,10 @@
       bottom: -3px;
       left: -2px;
       background-color: #b4b4b4c7;
+
+      @media all and (max-width: 700px) {
+        display: none;
+      }
     }
 
     &:hover::before {
