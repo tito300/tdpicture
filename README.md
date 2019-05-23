@@ -1,5 +1,5 @@
-# tdpicture
-A professional full stack photography website. 
+# tdpicture.com
+A professional full stack photography website.
 
 * Designed a modern and smooth UI with React for displaying hundreds of pictures.
 * Utilized server side rendering through Gatsby for Fast initial rendering.
