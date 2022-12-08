@@ -19,9 +19,9 @@
   },
   "homepage": "https://github.com/tito300/tdp-photography#readme",
   "dependencies": {
-    "body-parser": "^1.18.3",
+    "body-parser": "^1.20.1",
     "cors": "^2.8.5",
-    "express": "^4.16.4",
+    "express": "^4.18.2",
     "helmet": "^3.16.0",
     "morgan": "^1.9.1",
     "nodemailer": "^6.1.0",
